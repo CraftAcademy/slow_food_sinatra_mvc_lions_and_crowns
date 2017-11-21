@@ -19,6 +19,7 @@ gem 'shotgun'
 
 group :test do
   gem 'capybara'
+  gem 'cucumber'
   gem 'database_cleaner', '~> 1.4.1'
   gem 'rack-test'
   gem 'rspec'
