@@ -11,6 +11,11 @@ class SlowFoodApp
     erb :signup
   end
 
+  post '/signup' do
+    new_user = User.create(name: params['username'], password: params['password'])
+    erb :signup
+  end
+
   get '/users' do
     @users = User.all
     erb :users_index

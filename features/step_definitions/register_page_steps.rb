@@ -15,7 +15,7 @@ Then(/^I would like to see a text field for password$/) do
 end
 
 Then(/^I would like to see a register button$/) do
-  expect(page).to have_selector 'button'
+  expect(page).to have_selector 'submit'
 end
 
 Given(/^username and password has been entered$/) do
@@ -29,6 +29,5 @@ When(/^I press the register button$/) do
 end
 
 Then(/^I would like my information to be saved$/) do
-  new_user = User.create(name: 'alfred', password: 'whatever')
   expect(new_user.name).to eq 'alfred'
 end
