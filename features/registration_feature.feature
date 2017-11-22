@@ -11,6 +11,7 @@ Feature: Registration page
     And I would like to see a register button
 
   Scenario: Visitor writes his information and presses register
-    Given text has been entered
+    Given username and password has been entered
     When I press the register button
-    Then I would like my information to be stored in the database
+    Then I would like my information to be saved
+    And I would like a message saying my user has been created
