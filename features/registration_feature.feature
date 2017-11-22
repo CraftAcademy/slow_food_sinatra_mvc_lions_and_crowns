@@ -8,3 +8,4 @@ Feature: Registration page
     Then I would like to see a form for registration
     And I would like to see a text field for user name
     And I would like to see a text field for password
+    And I would like to see a register button

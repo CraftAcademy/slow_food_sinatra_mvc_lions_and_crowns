@@ -13,3 +13,7 @@ end
 Then(/^I would like to see a text field for password$/) do
   expect(page).to have_field 'password'
 end
+
+Then(/^I would like to see a register button$/) do
+  expect(page).to have_selector 'button'
+end
