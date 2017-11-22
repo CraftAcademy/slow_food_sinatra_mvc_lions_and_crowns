@@ -21,7 +21,7 @@ APP_NAME = 'slow_food'
 
 require APP_ROOT.join('config', 'database')
 
-class SlowFoodApp < Sinatra::base
+class SlowFoodApp < Sinatra::Base
   disable :logger, :dump_errors
   enable :session
   set :session_secret, ENV['SESSION_SECRET'] || 'randomstring'
