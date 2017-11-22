@@ -8,7 +8,7 @@ class SlowFoodApp
   end
 
   get '/signup' do
-
+    erb :signup
   end
 
   get '/users' do
