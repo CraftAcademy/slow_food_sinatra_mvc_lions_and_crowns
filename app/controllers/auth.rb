@@ -1,11 +1,13 @@
-get '/' do
-  erb :welcome
-end
+class SlowFoodApp
+  get '/' do
+    erb :welcome
+  end
 
-get '/login' do
-  
-end
+  get '/login' do
 
-get '/signup' do
-  
+  end
+
+  get '/signup' do
+
+  end
 end
