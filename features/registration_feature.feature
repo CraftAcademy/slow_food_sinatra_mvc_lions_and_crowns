@@ -9,14 +9,14 @@ Feature: Registration page
     And I would like to see a text field for user name
     And I would like to see a text field for password
     And I would like to see a text field for password confirmation
-    And I would like to see a register button
+    And I would like to see a sign up button
 
   Scenario: Visitor writes his information and presses register
     Given I visit the register page
     When I fill in 'name' with 'alfred'
     And I fill in 'password' with 'whatever'
     And I fill in 'password confirmation' with 'whatever'
-    When I press the register button
+    When I press the sign up button
     Then I would like my information to be saved
     And I would like a message saying my user has been created
 

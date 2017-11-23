@@ -11,18 +11,18 @@ Then(/^I would like to see a form for registration$/) do
 end
 
 Then(/^I would like to see a text field for user name$/) do
-  expect(page).to have_field 'Username'
+  expect(page).to have_field 'username'
 end
 
 Then(/^I would like to see a text field for password$/) do
-  expect(page).to have_field 'Password'
+  expect(page).to have_field 'password'
 end
 
 Then(/^I would like to see a text field for password confirmation$/) do
   expect(page).to have_field 'confirm_password'
 end
 
-Then(/^I would like to see a register button$/) do
+Then(/^I would like to see a sign up button$/) do
   expect(page).to have_selector(:link_or_button, "Sign up")
 end
 
