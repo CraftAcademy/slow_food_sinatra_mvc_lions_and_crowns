@@ -56,5 +56,5 @@ When(/^I press the sign up button$/) do
 end
 
 Then(/^I get en error message saying you need to enter a password$/) do
-  expect(page).to have_content 'You need to enter a passowrd'
+  expect(page).to have_content "Password can't be blank"
 end
