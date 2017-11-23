@@ -12,7 +12,7 @@ class SlowFoodApp
   end
 
   post '/signup' do
-    new_user = User.create(name: params['username'], password: params['password'])
+    @new_user = User.create(name: params['user']['username'], password: params['user']['password'])
     erb :signup
   end
 
