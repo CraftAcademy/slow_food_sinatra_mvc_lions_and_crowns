@@ -19,7 +19,7 @@ Then(/^I would like to see a text field for password$/) do
 end
 
 Then(/^I would like to see a text field for password confirmation$/) do
-  expect(page).to have_field 'Password confirmation'
+  expect(page).to have_field 'confirm_password'
 end
 
 Then(/^I would like to see a register button$/) do
@@ -30,7 +30,7 @@ Given(/^username and password has been entered$/) do
   visit '/signup'
   fill_in 'username', :with => 'alfred'
   fill_in 'password', :with => 'whatever'
-  fill_in 'passwordconfirmation', :with => 'whatever'
+  fill_in 'confirm_password', :with => 'whatever'
 end
 
 When(/^I press the register button$/) do
@@ -57,4 +57,15 @@ end
 
 Then(/^I get en error message saying you need to enter a password$/) do
   expect(page).to have_content "Password can't be blank"
+end
+
+Given(/^the password confirmation differs from password$/) do
+  visit '/signup'
+  fill_in 'username', :with => 'alfred'
+  fill_in 'password', :with => 'whatever'
+  fill_in 'confirm_password', :with => 'poop'
+end
+
+Then(/^I get an error message saying password confirmation differs from password$/) do
+  expect(page).to have_content "Password confirmation doesn't match Password"
 end

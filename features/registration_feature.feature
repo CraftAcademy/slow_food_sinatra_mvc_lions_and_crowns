@@ -22,3 +22,8 @@ Feature: Registration page
     Given only the username has been entered
     When I press the sign up button
     Then I get en error message saying you need to enter a password
+
+  Scenario: Visitor gets error message when password confirmation is different as password
+    Given the password confirmation differs from password
+    When I press the sign up button
+    Then I get an error message saying password confirmation differs from password
