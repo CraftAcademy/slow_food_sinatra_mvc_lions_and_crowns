@@ -45,3 +45,16 @@ end
 Then(/^I would like a message saying my user has been created$/) do
   expect(page).to have_content 'Your user has been created'
 end
+
+Given(/^only the username has been entered$/) do
+  visit '/signup'
+  fill_in 'username', :with => 'alfred'
+end
+
+When(/^I press the sign up button$/) do
+  click_button 'Sign up'
+end
+
+Then(/^I get en error message saying you need to enter a password$/) do
+  expect(page).to have_content 'You need to enter a passowrd'
+end

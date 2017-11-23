@@ -17,3 +17,8 @@ Feature: Registration page
     When I press the register button
     Then I would like my information to be saved
     And I would like a message saying my user has been created
+
+  Scenario: Visitor gets error message when not filling in password
+    Given only the username has been entered
+    When I press the sign up button
+    Then I get en error message saying you need to enter a password
