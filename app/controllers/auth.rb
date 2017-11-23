@@ -13,6 +13,7 @@ class SlowFoodApp
 
   post '/signup' do
     @new_user = User.create(name: params['user']['username'], password: params['user']['password'])
+    @message = 'Your user has been created'
     erb :signup
   end
 
