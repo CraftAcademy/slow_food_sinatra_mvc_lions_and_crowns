@@ -9,6 +9,7 @@ require 'pg'
 require 'active_record'
 require 'logger'
 require 'sinatra'
+require 'sinatra/flash'
 require 'sinatra/reloader' if development?
 require 'pry' unless production?
 
@@ -23,7 +24,8 @@ require APP_ROOT.join('config', 'database')
 
 class SlowFoodApp < Sinatra::Base
   disable :logger, :dump_errors
-  enable :session
+  enable :sessions
+  register Sinatra::Flash
   set :session_secret, ENV['SESSION_SECRET'] || 'randomstring'
   set :method_override, true
   set :root, APP_ROOT

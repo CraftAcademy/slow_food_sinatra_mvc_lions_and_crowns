@@ -19,6 +19,7 @@ Feature: Registration page
     When I press the sign up button
     Then I would like my information to be saved
     And I would like a message saying my user has been created
+    And I would like to be redirected to the home page
 
   Scenario: Visitor gets error message when not filling in password
     Given I visit the register page

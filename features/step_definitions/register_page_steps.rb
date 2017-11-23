@@ -55,6 +55,11 @@ Then(/^I would like a message saying my user has been created$/) do
   expect(page).to have_content 'Your user has been created'
 end
 
+Then(/^I would like to be redirected to the home page$/) do
+  expect(page).to have_current_path '/'
+end
+
+
 Given(/^only the username has been entered$/) do
   visit '/signup'
   fill_in 'username', :with => 'alfred'

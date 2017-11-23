@@ -8,7 +8,7 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra'
 gem 'sinatra-contrib'
-
+gem 'sinatra-flash'
 gem 'activerecord'
 gem 'activesupport'
 gem 'bcrypt'

@@ -30,6 +30,11 @@
         <a href="/login">Login</a>
       <% end %>
   </header>
+  <% flash.keys.each do |type| %>
+    <div>
+      <%= flash[type] %>
+    </div>
+  <% end %>
   <%= yield %>
 </div>
 </body>
