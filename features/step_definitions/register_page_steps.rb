@@ -26,10 +26,19 @@ Then(/^I would like to see a register button$/) do
   expect(page).to have_selector(:link_or_button, "Sign up")
 end
 
-Given(/^username and password has been entered$/) do
+Given(/^there is a register page$/) do
   visit '/signup'
-  fill_in 'username', :with => 'alfred'
+end
+
+When(/^I fill in 'name' with 'alfred'$/) do
+    fill_in 'username', :with => 'alfred'
+end
+
+When(/^I fill in 'password' with 'whatever'$/) do
   fill_in 'password', :with => 'whatever'
+end
+
+When(/^I fill in 'password confirmation' with 'whatever'$/) do
   fill_in 'confirm_password', :with => 'whatever'
 end
 
@@ -63,6 +72,9 @@ Given(/^the password confirmation differs from password$/) do
   visit '/signup'
   fill_in 'username', :with => 'alfred'
   fill_in 'password', :with => 'whatever'
+end
+
+When(/^I fill in 'password confirmation' with 'poop'$/) do
   fill_in 'confirm_password', :with => 'poop'
 end
 

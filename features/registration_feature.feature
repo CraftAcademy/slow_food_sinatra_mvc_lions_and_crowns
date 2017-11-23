@@ -4,7 +4,6 @@ Feature: Registration page
   I need to be able to register
 
   Scenario: Visitor sees a form to register on register page
-    #Given there is a register page
     When I visit the register page
     Then I would like to see a form for registration
     And I would like to see a text field for user name
@@ -13,17 +12,23 @@ Feature: Registration page
     And I would like to see a register button
 
   Scenario: Visitor writes his information and presses register
-    Given username and password has been entered
+    Given I visit the register page
+    When I fill in 'name' with 'alfred'
+    And I fill in 'password' with 'whatever'
+    And I fill in 'password confirmation' with 'whatever'
     When I press the register button
     Then I would like my information to be saved
     And I would like a message saying my user has been created
 
   Scenario: Visitor gets error message when not filling in password
-    Given only the username has been entered
-    When I press the sign up button
+    Given I visit the register page
+    When I fill in 'name' with 'alfred'
+    And I press the sign up button
     Then I get en error message saying you need to enter a password
 
   Scenario: Visitor gets error message when password confirmation is different as password
-    Given the password confirmation differs from password
-    When I press the sign up button
+    Given I visit the register page
+    When I fill in 'password' with 'whatever'
+    And I fill in 'password confirmation' with 'poop'
+    And I press the sign up button
     Then I get an error message saying password confirmation differs from password
