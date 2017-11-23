@@ -42,7 +42,7 @@ When(/^I fill in 'password confirmation' with 'whatever'$/) do
   fill_in 'confirm_password', :with => 'whatever'
 end
 
-When(/^I press the register button$/) do
+When(/^I press the sign up button$/) do
   click_button 'Sign up'
 end
 
@@ -58,10 +58,6 @@ end
 Given(/^only the username has been entered$/) do
   visit '/signup'
   fill_in 'username', :with => 'alfred'
-end
-
-When(/^I press the sign up button$/) do
-  click_button 'Sign up'
 end
 
 Then(/^I get en error message saying you need to enter a password$/) do

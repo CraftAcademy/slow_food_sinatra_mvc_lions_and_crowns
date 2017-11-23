@@ -12,7 +12,6 @@ class SlowFoodApp
   end
 
   post '/signup' do
-    #binding.pry
     @new_user = User.new(name: params['user']['username'], password: params['user']['password'], password_confirmation: params['user']['passwordconfirmation'])
     if @new_user.save
       @message = 'Your user has been created'
