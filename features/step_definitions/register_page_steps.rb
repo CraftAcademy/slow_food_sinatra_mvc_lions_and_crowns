@@ -18,6 +18,10 @@ Then(/^I would like to see a text field for password$/) do
   expect(page).to have_field 'Password'
 end
 
+Then(/^I would like to see a text field for password confirmation$/) do
+  expect(page).to have_field 'Password confirmation'
+end
+
 Then(/^I would like to see a register button$/) do
   expect(page).to have_selector(:link_or_button, "Sign up")
 end
@@ -26,6 +30,7 @@ Given(/^username and password has been entered$/) do
   visit '/signup'
   fill_in 'username', :with => 'alfred'
   fill_in 'password', :with => 'whatever'
+  fill_in 'passwordconfirmation', :with => 'whatever'
 end
 
 When(/^I press the register button$/) do
@@ -35,4 +40,8 @@ end
 Then(/^I would like my information to be saved$/) do
   user = User.last
   expect(user.name).to eq 'alfred'
+end
+
+Then(/^I would like a message saying my user has been created$/) do
+  expect(page).to have_content 'Your user has been created'
 end
