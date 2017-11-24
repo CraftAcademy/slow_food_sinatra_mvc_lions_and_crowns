@@ -6,8 +6,8 @@ When(/^I fill in "([^"]*)" with "([^"]*)"$/) do |field_name, value|
   fill_in field_name, with: value
 end
 
-When(/^I press the sign up button$/) do
-  click_button 'Sign up'
+When(/^I press the "([^"]*)" button$/) do |button|
+  click_button button
 end
 
 Then(/^I would like my user "([^"]*)" to be saved in the database$/) do |username|
