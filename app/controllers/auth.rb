@@ -18,7 +18,7 @@ class SlowFoodApp
       flash[:success] = 'Your user has been created'
       redirect '/'
     else
-      flash[:error] = new_user.errors.full_messages
+      flash[:error] = new_user.errors.full_messages.join(",")
       redirect '/signup'
     end
   end
