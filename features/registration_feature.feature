@@ -5,11 +5,11 @@ Feature: Registration page
 
   Scenario: Visitor writes his information and presses register
     Given I visit the register page
-    When I fill in "username" with "Alfred"
-    And I fill in "password" with "whatever"
-    And I fill in "confirm_password" with "whatever"
+    When I fill in "Username" with "Alfred"
+    And I fill in "Password" with "whatever"
+    And I fill in "Password Confirmation" with "whatever"
     When I press the sign up button
-    Then I would like my information to be saved
+    Then I would like my user "Alfred" to be saved in the database
     And I get a message saying "Your user has been created"
     And I would like to be redirected to the home page
 
