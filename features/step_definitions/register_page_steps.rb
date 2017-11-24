@@ -1,7 +1,3 @@
-Given(/^there is a register page$/) do
-  visit '/signup'
-end
-
 When(/^I visit the register page$/) do
   visit '/signup'
 end
@@ -61,7 +57,6 @@ end
 
 
 Given(/^only the username has been entered$/) do
-  visit '/signup'
   fill_in 'username', :with => 'alfred'
 end
 
@@ -70,7 +65,6 @@ Then(/^I get en error message saying you need to enter a password$/) do
 end
 
 Given(/^the password confirmation differs from password$/) do
-  visit '/signup'
   fill_in 'username', :with => 'alfred'
   fill_in 'password', :with => 'whatever'
 end

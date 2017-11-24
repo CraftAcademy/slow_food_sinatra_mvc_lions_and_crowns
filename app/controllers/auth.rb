@@ -12,7 +12,8 @@ class SlowFoodApp
   end
 
   post '/signup' do
-    new_user = User.new(name: params['user']['username'], password: params['user']['password'], password_confirmation: params['user']['passwordconfirmation'])
+    user_params = params['user']
+    new_user = User.new(user_params)
     if new_user.save
       flash[:success] = 'Your user has been created'
       redirect '/'
