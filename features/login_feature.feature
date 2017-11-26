@@ -15,4 +15,3 @@ Feature: Login Page
     And I press the "Login" button
     Then I would like to be redirected to the home page
     And I get a message saying "Welcome Alfred! You are logged in"
-    And I should see "Logged in as: Alfred"
