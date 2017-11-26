@@ -1,48 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!--
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
-  <!-- Load Vollkorn font -->
-  <link href='http://fonts.googleapis.com/css?family=Vollkorn:400italic,400' rel='stylesheet' type='text/css'>
+<doctype html>
+  <html class="no-js" lang="en">
+    <head>
+      <meta charset="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>SlowFood</title>
+      <link href='https://fonts.googleapis.com/css?family=Quicksand' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" type="text/css" href="foundation-icons/foundation-icons.css">
+      <link rel="stylesheet" href="css/foundation.css"/>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+      <div style="background-color:rgba(137, 154, 156, 0.7); min-height:100%; width:100%;">
+        <div class="hero-full-screen">
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/js/application.js"></script>
+          <div class="top-content-section">
+            <div class="top-bar">
+              <div class="top-bar-left">
 
-  <title></title>
-</head>
-<body>
-<div id="content">
-  <header>
-    <a href="/"><img src="/img/zenchinese.png" class="logo"></a>
-    <div id="login-toolbar">
-      <% if current_user %>
-        <p>Logged in as: <%= current_user.name %> </p>
-        <a href="/logout">Logout</a>
-      <% else %>
-        <a href="/login">Login</a>
-        <a href="/signup">Sign Up</a>
-      <% end %>
-  </header>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-  <% if order %>
-    <a href="/checkout">Checkout</a>
-  <% end %>
+      <div class="middle-content-section">
+        <h1 class="subheader">Welcome to SlowFood</h1>
+      </div>
 
-  <% flash.keys.each do |type| %>
-    <div>
-      <%= flash[type] %>
+      <img alt='Responsive image' src="https://source.unsplash.com/1Shk_PkNkNw/1700x500" alt="slide 1"/>
+
+      <div class="bottom-content-section" data-magellan data-threshold="0">
+        <a href="#main-content-section">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 12c0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12 12-5.373 12-12zm-18.005-1.568l1.415-1.414 4.59 4.574 4.579-4.574 1.416 1.414-5.995 5.988-6.005-5.988z"/></svg>
+        </a>
+      </div>
+      <br/>
+
     </div>
-  <% end %>
-  <%= yield %>
-</div>
-</body>
-</html>
+
+    <div id="main-content-section" data-magellan-target="main-content-section">
+      SlowFood - were food is quick so you have time to be slow.
+    </div>
+
+    <div class="va-align">
+
+      <% if current_user %>
+
+      <%= current_user.name %></h2><br><br>
+    <a href="/logout" class="secondary hollow button">Logout</a>
+
+  <% else %>
+    <br>
+    <!-- <h2>Welcome to Slow Food</h2><br><br> -->
+
+    <!-- <a href="/login" class="secondary hollow button">Login</a> -->
+    <% end %>
+
+    <div id="content">
+      <header>
+        <a href="/"><img src="/img/zenchinese.png" class="logo"></a>
+        <div id="login-toolbar">
+          <% if current_user %>
+          <p>Logged in as:
+            <%= current_user.name %>
+          </p>
+          <a href="/logout">Logout</a>
+        <% else %>
+          <a href="/login">Login</a>
+          <a href="/signup">Sign Up</a>
+          <% end %>
+        </header>
+
+        <% if order %>
+        <a href="/checkout">Checkout</a>
+        <% end %>
+
+        <% flash.keys.each do |type| %>
+        <div>
+          <%= flash[type] %>
+        </div>
+        <% end %>
+        <%= yield %>
+      </div>
+      <div id="content">
+
+        <script src="js/jquery.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script>
+          $(document).foundation();
+        </script>
+      </body>
+    </html>
