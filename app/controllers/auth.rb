@@ -9,6 +9,12 @@ class SlowFoodApp
     erb :login
   end
 
+  get '/logout' do
+    session[:user_id] = nil
+    flash[:logout] = 'You have been logged out'
+    redirect '/'
+  end
+
   post '/login' do
     user = User.find_by(name: params['user']['name'])
     if user.authenticate(params['user']['password'])
