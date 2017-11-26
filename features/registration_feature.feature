@@ -12,7 +12,6 @@ Feature: Registration page
     Then I would like my user "Alfred" to be saved in the database
     And I would like to be redirected to the home page
     And I get a message saying "Your user has been created"
-    And show me the page
     And I should see "Logged in as: Alfred"
 
 
