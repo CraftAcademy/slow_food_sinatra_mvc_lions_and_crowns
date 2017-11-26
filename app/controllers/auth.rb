@@ -29,6 +29,8 @@ class SlowFoodApp
     user_params = params['user']
     new_user = User.new(user_params)
     if new_user.save
+      new_user.authenticate(user_params['password'])
+      session[:user_id] = new_user.id
       flash[:success] = 'Your user has been created'
       redirect '/'
     else
